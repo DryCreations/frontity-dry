@@ -1,23 +1,23 @@
-import React from "react";
+import Theme from "./components";
 
-const Root = () => {
-  return (
-    <>
-      You can edit your package in:
-      <pre>packages\frontity-dry-theme\src\index.js</pre>
-    </>
-  );
-};
-
-export default {
-  name: "frontity-dry-theme",
+const fontityDryTheme = {
+  name: "fontity-dry-theme",
   roots: {
-    theme: Root
+    theme: Theme
   },
   state: {
-    theme: {}
+      theme: {
+        menu: [],
+        colors: {
+          headerBackground: "#FFFFFF",
+          footerBackground: "#FFFFFF",
+          bodyBackground: "#FFFFFF",
+        }
+      }
   },
   actions: {
-    theme: {}
+      theme: {}
   }
 };
+
+export default fontityDryTheme
