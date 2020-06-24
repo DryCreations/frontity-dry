@@ -54,6 +54,8 @@ const documentSetup = (colors) => css`
   body {
     background: ${colors.background.body};
   }
+
+  html {overflow-y: scroll;}
 `;
 
 const globalStyles = (colors) => css([

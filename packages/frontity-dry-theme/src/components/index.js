@@ -20,10 +20,10 @@ const Theme = ({ state }) => {
 
   const accent = () => {
     if (data.isFetching) return scheme.accent.loading;
-    if (data.isArchive) return scheme.accent.list;
-    if (data.isPostType) return scheme.accent.post;
-    if (data.isPage) return scheme.accent.page;
     if (data.isError) return scheme.accent.error;
+    if (data.isArchive) return scheme.accent.list;
+    if (data.isPage) return scheme.accent.page;
+    if (data.isPostType) return scheme.accent.post;
   }
 
   return (

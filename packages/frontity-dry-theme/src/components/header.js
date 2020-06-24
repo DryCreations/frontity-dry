@@ -13,7 +13,7 @@ const Header = ({ state, accent, background, titleColor, menuColor }) => {
             {title}
           </SiteTitle>
         </StyledLink>
-        <Menu accent={accent} textColor={menuColor}>
+        <Menu accent={accent} background={background} textColor={menuColor}>
           {state.theme.menu.map(item => (
             <StyledLink key={item[0]} href={item[1]}>
               {item[0]}
@@ -30,6 +30,8 @@ export default connect(Header);
 const PageHeader = styled.header`
   border-top: 10px solid ${(props) => props.accent};
   background-color: ${(props) => props.background};
+
+  transition: border-top .5s ease-in-out;
 `;
 
 const HeaderInner = styled.div`
@@ -56,7 +58,7 @@ const HeaderInner = styled.div`
   }
 
   overflow: hidden;
-  padding: 10px;
+  padding: 16px;
 `;
 
 const SiteTitle = styled.h1`
@@ -70,9 +72,14 @@ const StyledLink = styled(Link)`
 
 const Menu = styled.div`
   float: right;
+  a {
+    border:1px solid ${(props) => props.background};
+    color: ${(props) => props.textColor};
 
+    transition: background-color .5s ease-in-out;
+  }
   a.active {
-    background-color: ${(props) => props.accent};
+    border:1px solid ${(props) => props.accent};
   }
 
   a:hover:not(.active) {
@@ -83,9 +90,5 @@ const Menu = styled.div`
       margin-left: 20px;
     }
   }
-  a {
-    color: ${(props) => props.textColor}
-  }
-
 
 `;
