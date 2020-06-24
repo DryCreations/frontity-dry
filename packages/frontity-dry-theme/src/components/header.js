@@ -76,7 +76,7 @@ const Menu = styled.div`
   }
 
   a:hover:not(.active) {
-    background-color: rgba(127,127,127,.2)
+    background-color: rgba(127,127,127,.1)
   }
   @media screen and (min-width: 700px) {
     a {

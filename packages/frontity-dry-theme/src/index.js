@@ -24,7 +24,7 @@ const fontityDryTheme = {
             accent: {
               post: "#C5D7C0",
               page: "#F8CA9D",
-              list: "#8EC9BB",
+              list: "#E8E8E8",
               error: "#FA6E4F",
               loading: "#F2CF59"
             }
