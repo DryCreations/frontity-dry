@@ -16,6 +16,15 @@ import globalStyles from "./styles/global-styles";
 const Theme = ({ state }) => {
 
   const data = state.source.get(state.router.link);
+  const scheme = state.theme.color[state.theme.currentTheme];
+
+  const accent = () => {
+    if (data.isFetching) return scheme.accent.loading;
+    if (data.isArchive) return scheme.accent.list;
+    if (data.isPostType) return scheme.accent.post;
+    if (data.isPage) return scheme.accent.page;
+    if (data.isError) return scheme.accent.error;
+  }
 
   return (
     <>
@@ -25,9 +34,14 @@ const Theme = ({ state }) => {
         <html lang="en" />
       </Head>
 
-      <Global styles={globalStyles(state.theme.colors)} />
+      <Global styles={globalStyles(scheme)} />
 
-      <Header />
+      <Header
+        background={scheme.background.header}
+        accent={accent}
+        titleColor={scheme.text.title}
+        menuColor={scheme.text.menu}
+      />
 
       <Main>
         <Switch>

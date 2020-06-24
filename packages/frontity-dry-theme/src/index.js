@@ -8,15 +8,42 @@ const fontityDryTheme = {
   state: {
       theme: {
         menu: [],
-        colors: {
-          headerBackground: "#FFFFFF",
-          footerBackground: "#FFFFFF",
-          bodyBackground: "#FFFFFF",
+        currentTheme: "light",
+        color: {
+          light: {
+            background: {
+              header: "#FFFFFF",
+              footer: "#FFFFFF",
+              body: "#FFFFFF",
+            },
+            text: {
+              link: "#8888FF",
+              title: "#000000",
+              menu: "#000000"
+            },
+            accent: {
+              post: "#C5D7C0",
+              page: "#F8CA9D",
+              list: "#8EC9BB",
+              error: "#FA6E4F",
+              loading: "#F2CF59"
+            }
+          },
+          dark: {
+
+          }
         }
       }
   },
   actions: {
-      theme: {}
+      theme: {
+        setDarkMode: ({state}) => {
+          state.theme.currentTheme = "dark";
+        },
+        setLightMode: ({state}) => {
+          state.theme.currentTheme = "light";
+        },
+      }
   }
 };
 
