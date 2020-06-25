@@ -53,9 +53,15 @@ const cssReset = css`
 const documentSetup = (colors) => css`
   body {
     background: ${colors.background.body};
+    color: ${colors.text.main};
   }
 
   html {overflow-y: scroll;}
+
+  a {
+    color: ${ colors.text.link };
+    text-decoration: none;
+  }
 `;
 
 const globalStyles = (colors) => css([

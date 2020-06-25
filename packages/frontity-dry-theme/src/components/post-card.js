@@ -10,6 +10,7 @@ const PostCard = ({ state, post }) => {
   const date = new Date(post.date);
 
   const data = state.source.get(state.router.link);
+
   const accent = () => {
     if (data.isFetching) return scheme.accent.loading;
     if (data.isError) return scheme.accent.error;
@@ -18,23 +19,23 @@ const PostCard = ({ state, post }) => {
     if (data.isPostType) return scheme.accent.post;
   }
 
-  const infoString = (date.toLocaleDateString(undefined, {year: 'numeric', month: 'short', day: 'numeric' }) + " by " + state.source.author[post.author].name).toUpperCase();
   return (
     <Card>
-      <Wrapper>
         {post.featured_media != 0 &&
           <Link href={post.link}>
             <Featured {...getMediaAttributes(state, post.featured_media)}/>
           </Link>
         }
         <CardInfo background={scheme.background.body} showBorder={post.featured_media == 0} accent={accent}>
-          <h3>{infoString}</h3>
-          <h2><Link href={post.link}><div dangerouslySetInnerHTML={{ __html: post.title.rendered }}></div></Link></h2>
+          <h4><Link href={post.link}>{date.toLocaleDateString(undefined, {year: 'numeric', month: 'short', day: 'numeric' }).toUpperCase()}</Link> BY <Link href={state.source.author[post.author].link}>{state.source.author[post.author].name.toUpperCase()}</Link></h4>
+          <h3><Link href={post.link}><div dangerouslySetInnerHTML={{ __html: post.title.rendered }}></div></Link></h3>
+          <div>
+            <Break accent={accent} />
+          </div>
           <div
             dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
           />
         </CardInfo>
-      </Wrapper>
     </Card>
   );
 };
@@ -43,7 +44,11 @@ export default connect(PostCard);
 
 const Featured = styled(Image)`
   max-width: 100%;
-  border-radius: 5px;
+
+  @media screen and (min-width: 700px) {
+    border-radius: 5px;
+  }
+
 `;
 
 const Card = styled.div`
@@ -56,7 +61,14 @@ const CardInfo = styled.div`
   display: inline-block;
   margin: auto;
 
-  border-radius: 5px;
+  @media screen and (min-width: 700px) {
+    border-radius: 5px;
+  }
+
+  @media screen and (max-width: 700px) {
+    max-width: ${(props) => props.showBorder ? '100%' : '80%'};
+    border-radius: ${(props) => props.showBorder ? '0px' : '5px'};
+  }
 
   background: ${(props) => props.background};
 
@@ -69,13 +81,13 @@ const CardInfo = styled.div`
     margin-top: 10px;
   }
 
-  h3 {
+  h4 {
     font-size: 100%;
     font-weight: bold;
   }
 
-  h2 {
-    font-size: 150%;
+  h3 {
+    font-size: 160%;
     font-weight: bold;
   }
 
@@ -83,9 +95,13 @@ const CardInfo = styled.div`
     font-size: 100%;
   }
 
-  border: ${(props) => props.showBorder ? '1px' : '0'} solid ${(props) => props.accent};
+  border-top: ${(props) => props.showBorder ? '10px' : '0'} solid ${(props) => props.accent};
 `;
 
-const Wrapper = styled.div`
-  display: inline-block;
+const Break = styled.hr`
+  width: 50px;
+  border: 1.5px solid ${(props) => props.accent};
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 `;

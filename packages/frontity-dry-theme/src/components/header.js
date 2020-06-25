@@ -62,7 +62,7 @@ const HeaderInner = styled.div`
 `;
 
 const SiteTitle = styled.h1`
-  font-size: 150%;
+  font-size: 180%;
   color: ${(props) => props.textColor}
 `;
 
