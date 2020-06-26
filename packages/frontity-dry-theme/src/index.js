@@ -13,14 +13,14 @@ const fontityDryTheme = {
           light: {
             background: {
               header: "#FBFBF8",
-              footer: "#FBFBF8",
+              footer: "#F0F0F0",
               body: "#FBFBF8",
             },
             text: {
               title: "#313639",
               menu: "#313639",
               main: "#313639",
-              caption: "#202020"
+              caption: "#505050"
             },
             accent: {
               post: "#3EB650",
@@ -31,7 +31,24 @@ const fontityDryTheme = {
             }
           },
           dark: {
-
+            background: {
+              header: "#181822",
+              footer: "#181822",
+              body: "#181822",
+            },
+            text: {
+              title: "#FFFFFF",
+              menu: "#FFFFFF",
+              main: "#FFFFFF",
+              caption: "#FFFFFF"
+            },
+            accent: {
+              post: "#3EB650",
+              page: "#E56B1F",
+              list: "#3778C2",
+              error: "#FF0000",
+              loading: "#F2CF59"
+            }
           }
         }
       }

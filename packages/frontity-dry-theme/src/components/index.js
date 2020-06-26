@@ -54,7 +54,10 @@ const Theme = ({ state }) => {
         </Switch>
       </Main>
 
-      <Footer />
+      <Footer
+        background={scheme.background.footer}
+        textColor={scheme.text.caption}
+      />
     </>
   );
 };

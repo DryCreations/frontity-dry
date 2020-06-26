@@ -4,11 +4,16 @@ import { connect, styled } from "frontity";
 import Image from "@frontity/components/image";
 import { getMediaAttributes } from "../helpers";
 
-const Page = ({ state, libraries }) => {
+const Page = ({ state,actions, libraries }) => {
   const data = state.source.get(state.router.link);
   const page = state.source[data.type][data.id];
 
   const Html2React = libraries.html2react.Component;
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+      actions.source.fetch("/");
+  });
 
   return (
     <Wrapper>
