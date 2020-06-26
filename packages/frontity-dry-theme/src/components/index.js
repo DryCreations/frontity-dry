@@ -26,6 +26,7 @@ const Theme = ({ state }) => {
     if (data.isPostType) return scheme.accent.post;
   }
 
+
   return (
     <>
       <Title />
@@ -34,7 +35,7 @@ const Theme = ({ state }) => {
         <html lang="en" />
       </Head>
 
-      <Global styles={globalStyles(scheme)} />
+      <Global styles={globalStyles(scheme, accent())} />
 
       <Header
         background={scheme.background.header}

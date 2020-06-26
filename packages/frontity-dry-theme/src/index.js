@@ -17,17 +17,16 @@ const fontityDryTheme = {
               body: "#FBFBF8",
             },
             text: {
-              link: "#8888FF",
               title: "#313639",
               menu: "#313639",
               main: "#313639",
               caption: "#202020"
             },
             accent: {
-              post: "#C5D7C0",
-              page: "#F8CA9D",
-              list: "#313639",
-              error: "#FA6E4F",
+              post: "#3EB650",
+              page: "#E56B1F",
+              list: "#3778C2",
+              error: "#FF0000",
               loading: "#F2CF59"
             }
           },

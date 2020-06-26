@@ -27,6 +27,6 @@ const Link = ({ state, href, actions, children }) => {
 export default connect(Link);
 
 const Anchor = styled.a`
-    color: ${ (props) => props.linkColor };
+    /* color: ${ (props) => props.linkColor }; */
     text-decoration: none;
 `

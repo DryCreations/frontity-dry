@@ -10,8 +10,6 @@ const Page = ({ state, libraries }) => {
 
   const Html2React = libraries.html2react.Component;
 
-
-
   return (
     <Wrapper>
     <Article>

@@ -73,7 +73,7 @@ const documentSetup = (colors) => css`
   }
 `;
 
-const elementBase = (colors) => css`
+const elementBase = (colors, accent) => css`
   main {
     display: block;
   }
@@ -174,11 +174,10 @@ const elementBase = (colors) => css`
   hr {
     border-style: solid;
     border-width: 0.1rem 0 0 0;
-    border-color: ${colors.accent.main};
-
+    border-color: ${ accent };
   }
   a {
-    color: ${ colors.text.link };
+    color: ${ accent };
     text-decoration: underline;
   }
   a:hover,
@@ -318,9 +317,9 @@ const tableStyles = (colors) => css`
   }
 `;
 
-const quoteStyle = (colors) => css`
+const quoteStyle = (colors, accent) => css`
   blockquote {
-    border-color: ${colors.accent.main};
+    border-color: ${accent};
     border-style: solid;
     /*rtl:ignore*/
     border-width: 0 0 0 0.2rem;
@@ -346,7 +345,7 @@ const quoteStyle = (colors) => css`
   }
 `;
 
-const codeStyle = (colors) => css`
+const codeStyle = (colors, accent) => css`
   code,
   kbd,
   pre,
@@ -362,7 +361,7 @@ const codeStyle = (colors) => css`
     border-radius: 0.2rem;
   }
   pre {
-    border: 0.1rem solid ${colors.accent.main};
+    border: 0.1rem solid ${accent};
     line-height: 1.5;
     margin: 4rem 0;
     overflow: auto;
@@ -375,16 +374,16 @@ const codeStyle = (colors) => css`
   }
 `;
 
-const globalStyles = (colors) => css([
+const globalStyles = (colors, accent) => css([
   cssReset,
   documentSetup(colors),
   accessibilitySettings,
-  elementBase(colors),
+  elementBase(colors, accent),
   listStyle,
-  mediaStyle,
-  codeStyle,
-  quoteStyle,
-  tableStyles
+  mediaStyle(colors),
+  codeStyle(colors, accent),
+  quoteStyle(colors, accent),
+  tableStyles(colors)
 
 ]);
 
