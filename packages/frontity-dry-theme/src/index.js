@@ -20,7 +20,8 @@ const fontityDryTheme = {
               link: "#8888FF",
               title: "#313639",
               menu: "#313639",
-              main: "#313639"
+              main: "#313639",
+              caption: "#202020"
             },
             accent: {
               post: "#C5D7C0",

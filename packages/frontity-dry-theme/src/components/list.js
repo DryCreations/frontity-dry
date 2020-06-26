@@ -33,7 +33,7 @@ const Items = styled.div`
 `
 
 const ListHeader = styled.h2`
-  font-size: 140%;
+  /* font-size: 140%; */
   text-align: center;
   margin-top: 100px;
   font-style: italic;

@@ -102,6 +102,6 @@ const Break = styled.hr`
   width: 50px;
   border: 1.5px solid ${(props) => props.accent};
   border-radius: 5px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 `;

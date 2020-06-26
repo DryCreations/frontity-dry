@@ -39,7 +39,7 @@ const HeaderInner = styled.div`
     float: left;
     text-align: center;
     padding: 5px 15px;
-    font-size: 18px;
+    /* font-size: 18px; */
     line-height: 25px;
     border-radius: 30px;
   }
@@ -62,8 +62,9 @@ const HeaderInner = styled.div`
 `;
 
 const SiteTitle = styled.h1`
-  font-size: 180%;
-  color: ${(props) => props.textColor}
+  font-size: 200%;
+  color: ${(props) => props.textColor};
+  margin: 0px;
 `;
 
 const StyledLink = styled(Link)`
