@@ -55,7 +55,7 @@ const Pagination = styled.div`
 
   margin-bottom: 100px;
 
-  > a:nth-child(2) {
+  > a:nth-of-type(2) {
     margin-left: 20px;
   }
 

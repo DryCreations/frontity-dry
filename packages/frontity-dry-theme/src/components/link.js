@@ -5,7 +5,7 @@ const Link = ({ state, href, actions, children }) => {
   const scheme = state.theme.color[state.theme.currentTheme];
   const currentRoute = state.router.link;
 
-  const isActiveClass = currentRoute == href ? "active" : "";
+  const isActiveClass = currentRoute.split("page")[0] == href ? "active" : "";
 
   return (
 
